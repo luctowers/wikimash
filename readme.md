@@ -126,7 +126,7 @@ topics linked.
 
 [wikipedia]:https://wikipedia.org/
 [demo]:https://luctowers.github.io/wikimash
-[download]:https://github.com/luctowers/wikimash
+[download]:https://github.com/luctowers/wikimash/archive/master.zip
 [mwapi]:https://www.mediawiki.org/wiki/API:Main_page
 [mwapietiquette]:https://www.mediawiki.org/wiki/API:Etiquette
 [mwapilinks]:https://www.mediawiki.org/wiki/API:Links
