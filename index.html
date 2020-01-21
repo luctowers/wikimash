@@ -1,0 +1,42 @@
+<!doctype html>
+
+<!-- (c) 2020 Lucas Towers - Licensed under MIT -->
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Wikimash - Solve the Wiki Game</title>
+    <meta name="author" content="Lucas Towers">
+    <meta name="description" content="Solve the Wiki Game! Find links between Wikipedia articles.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:500,Open+Sans:400" rel="stylesheet">
+    <link rel="stylesheet" href="wikimash.css">
+  </head>
+  <body>
+    <h1 class="text-center">
+      <a id="headerlink" href="" class="no-decoration">
+        Wikimash
+      </a>
+    </h1>
+    <noscript>
+      <p class="text-center text-error">
+        <a href="https://www.enable-javascript.com/" target="_blank">
+          Javascript must be enabled for this page to function.
+        </a>
+      </p>
+    </noscript>
+    <div id="content">
+    </div>
+    <p class="text-center text-muted">
+      &copy; 2020 Lucas Towers<br>
+      <!-- using html entities to prevent trivial email scraping -->
+      <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#108;&#117;&#099;&#116;&#111;&#119;&#101;&#114;&#115;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">
+        &#108;&#117;&#099;&#116;&#111;&#119;&#101;&#114;&#115;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;
+      </a>
+    </p>
+    <!-- polyfills for older browsers, namely IE 8 & IE 9 -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.forEach%2CArray.prototype.filter%2CArray.prototype.map%2CObject.keys%2CPromise"></script>
+    <!-- the script that powers the whole app -->
+    <script src="wikimash.js"></script>
+  </body>
+</html>

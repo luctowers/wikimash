@@ -1,0 +1,224 @@
+/* (c) 2020 Lucas Towers - Licensed under MIT */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 90%;
+  min-width: 288px;
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: white;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.0;
+}
+
+h1 {
+  margin-top: 24px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 62px;
+  font-weight: 500;
+}
+
+p {
+  margin-top: 14px;
+  margin-bottom: 14px;
+  line-height: 1.58;
+}
+
+a {
+  color: inherit;
+}
+
+input, button {
+  font-size: 16px;
+}
+
+input[type="text"]::placeholder {
+  color: #bbbbbb;
+}
+
+svg line, svg path, svg polyline {
+  stroke-width: 2;
+  stroke: black;
+  fill: none;
+}
+
+svg polygon, svg rect {
+  stroke: none;
+  fill: black;
+}
+
+button, input {
+  display: inline-block;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  border-radius: 0px;
+}
+
+button:hover, input[type="submit"]:hover, .link-button:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
+button:hover svg line, button:hover svg path, button:hover svg polyline {
+  stroke: white;
+}
+
+button:hover svg polygon, button:hover svg rect {
+  fill: white;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.no-decoration {
+  text-decoration: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: #bbbbbb;
+}
+
+.text-error {
+  color: #EF5350;
+}
+
+.icon {
+  width: 32px;
+  height: 24px;
+}
+
+.articleselect {
+  margin-bottom: 12px;
+}
+
+.articleselect-header {
+  margin-bottom: 6px;
+}
+
+.articleselect-label {
+  margin: 4px;
+  font-size: 18px;
+  float: left;
+}
+
+.articleselect-suggestions {
+  height: 24px;
+  overflow: hidden;
+  text-align: right;
+}
+
+.articleselect-suggestions button {
+  box-sizing: border-box;
+  margin-left: 4px;
+  padding: 0px 2px;
+  border: 2px solid black;
+  max-width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 24px;
+}
+
+.articleselect-searchbar {
+  position: relative;
+  height: 36px;
+}
+
+.articleselect-inputwrapper {
+  position: absolute;
+  left: 0px;
+  right: 100px;
+}
+
+.articleselect-input {
+  box-sizing: border-box;
+  border: 2px solid black;
+  width: 100%;
+  height: 35px;
+  padding: 6px 6px;
+}
+
+.articleselect-randomize {
+  box-sizing: border-box;
+  position: absolute;
+  right: 50px;
+  width: 51px;
+  height: 35px;
+  border: 2px solid black;
+  border-left: none;
+}
+
+.articleselect-validity {
+  box-sizing: border-box;
+  position: absolute;
+  right: 0px;
+  width: 51px;
+  height: 35px;
+  border: 2px solid black;
+  border-left: none;
+}
+
+.articleselect-icon {
+  display: block;
+  margin: 3px auto;
+}
+
+.form-button {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  border: 2px solid black;
+  padding: 7px 24px 6px 24px;
+}
+
+.link-button {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  margin-bottom: 7px;
+  border: 2px solid black;
+  padding: 7px 24px 6px 24px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.visualizer {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  margin-top: 24px;
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+
+@keyframes rotating {
+  from
+  {
+    transform: rotate(0deg);
+  }
+  to 
+  {
+    transform: rotate(360deg);
+  }
+}
+
+.spin
+{
+  animation: rotating 1s linear infinite;
+}
