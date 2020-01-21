@@ -1342,7 +1342,7 @@ function setupForm() {
   var howItWorksLink = document.createElement("a");
   howItWorksLink.target = "_blank";
   howItWorksLink.innerHTML = "how it works";
-  howItWorksLink.href = "https://github.com/luctowers/wikimash/readme.md#how-it-works";
+  howItWorksLink.href = "https://github.com/luctowers/wikimash/blob/master/readme.md#how-it-works";
   howItWorksParagraph.appendChild(howItWorksLink);
 
   var codeLinkParagraph = document.createElement("p");
