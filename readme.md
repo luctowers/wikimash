@@ -66,7 +66,7 @@ tree is the end. Thus we have our path.
 
 ### How Viable is this Theoretically?
 
-Statistically, given two search, each containing *x* unique articles the
+Statistically, given two search trees, each containing *x* unique articles the
 likelyhood of them sharing article at least one article given a pool of *N*
 articles is given by:
 
