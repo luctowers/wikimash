@@ -5,12 +5,12 @@ An online tool that uses the [MediaWiki API][mwapi] to solve the
 
 ### A brief description of the Wiki Game
 
-For the uninitiated, the Wiki Game is simple game that can be played using only
+For the uninitiated, the Wiki Game is a simple game that can be played using only
 your web browser and a connection to [Wikipedia][wikipedia]. The player begins
 with two Wikipedia articles, a start article and an end article. The goal of the
 game is to begin at the start article then, using only hyperlinks found in
 wikipedia articles, navigate from one page to another to find the end article.
-For example if start article was *Hydrogen*  and the end article was *Penguin*
+For example, if start article was *Hydrogen*  and the end article was *Penguin*
 your path may something look like: `Hydrogen > Algae > Marine biology > Penguin`
 
 ## Try out the solver
@@ -32,7 +32,7 @@ of MediaWiki API requests possible.
 We are essentially navigating a maze with no sense of direction. Unlike other
 pathfinding problems, we can't really get an idea of how far we have yet to go
 to reach the end. In a traditional maze we could use the distance as the crow
-flies as a heurisitic to help guide the algorithm, but we don't have that luxury
+flies as a heuristic to help guide the algorithm, but we don't have that luxury
 in this case.
 
 ### The Wrong Approach
@@ -40,12 +40,12 @@ in this case.
 One option is to do a simple [breadth-first search][bfs] from start article
 until you find the end article. Now, if a relatively short path between the
 start and end articles exists this wouldn't be a terrible option. But, in the
-likely scenario where there is more than a couple articles between start and
-end, this method will take absolutely forever due to the exponentialy increasing
+likely scenario where there are more than a couple articles between start and
+end, this method will take absolutely forever due to the exponentially increasing
 number of articles that must be explored as you go deeper and deeper in the
-search tree with no end in-sight.
+search tree with no end insight.
 
-![simple breadth first serach](images/tree.png)
+![simple breadth first search](images/tree.png)
 
 ### A Solution
 
@@ -55,11 +55,11 @@ to end, we should use two search trees. The first will be a traditional forward
 search tree that begins at the start article and follows links to expand the
 tree. The second will be a backwards search tree which starts at the end article
 and follows [backlinks][backlink] (as oppose traditional forward links) to
-expand the tree. As we simulatneously explore both trees, if at any point we
+expand the tree. As we simultaneously explore both trees, if at any point we
 find an article shared between the two trees we instantly know that we have
 found a path from start and end. To complete the path we simply trace the shared
 article back to the root article in both trees. The root article in the forward
-search tree is the start and conversly the root article of the backward search
+search tree is the start and conversely the root article on the backward search
 tree is the end. Thus we have our path.
 
 ![simple breadth first serach](images/bitree.png)
@@ -67,7 +67,7 @@ tree is the end. Thus we have our path.
 ### How Viable is this Theoretically?
 
 Statistically, given two search trees, each containing *x* unique articles the
-likelyhood of them sharing article at least one article given a pool of *N*
+likelihood of them sharing article at least one article given a pool of *N*
 articles is given by:
 
 ![probability function](images/probability.png)
@@ -84,13 +84,13 @@ MediaWiki [Links API][mwapilinks] and [Linkshere API][mwapilinkshere] both
 impose a 500 articles returned per request limit. Meaning that it would take at
 least 12 requests to accrue 6000 articles. Following the
 [MediaWiki API Etiquette][mwapietiquette], meaning no parallel/concurrent
-requests, assuming a 150ms roundtrip time for API requests, after 1.8 seconds
+requests, assuming a 150ms round-trip time for API requests, after 1.8 seconds
 there would be a 75% chance a path has been found. Using the same logic, 2.4
 seconds of searching would give a roughly 95% chance.
 
 ### How Viable is this Practically?
 
-There are a few key factors that make the efficency of the algorithm deviate
+There are a few key factors that make the efficiency of the algorithm deviate
 from the previously described model. Below are some crude observations I made
 when testing the program.
 
@@ -98,9 +98,9 @@ when testing the program.
 
 Generally, articles on Wikipedia are quite well connected. When an article is
 created usually writers will populate the page with at least a few links to
-broader topics. This is extremely beinificial to us and can even make the
+broader topics. This is extremely beneficial to us and can even make the
 algorithm perform better than the above model. Unfortunately, while this case
-almost always holds for tradtional forward links, it is not so simple for
+almost always holds for traditional forward links, it is not so simple for
 backlinks. When an article is created sadly it is not always a priority to link
 to them, meaning that small articles that are relatively narrow in subject
 matter sometimes either have no articles that link to them or only have very
@@ -110,16 +110,16 @@ few similarly obscure and disconnected articles that link to them.
 
 The only scenario in which the algorithm fails is when there is no possible path
 from the start to end. This is determined to be the case when one of the two
-search trees runs out of articles to explore. This is quite a rare occurence. I
+search trees runs out of articles to explore. This is quite a rare occurrence. I
 have never observed it happening in the forward search tree. And the only time
 it has happened in the backward search tree is when the end article is extremely
-obcure an disconnected.
+obscure an disconnected.
 
 #### When Does the Algorithm Take a Long Time?
 
-The most common sittuation where the algorithm stalls is when it gets trapped in
+The most common situation where the algorithm stalls is when it gets trapped in
 a group of articles that have a large number of connections to similar articles
-without with few connections to broader topics. This much like the fail scenario
+without with few connections to broader topics. This, much like the fail scenario
 is relatively rare. The only articles I've seen exhibit this are some 'List of
 [Insert Topic]' articles that have an absurd number of links but no broader
 topics linked. 
