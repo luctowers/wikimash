@@ -3,6 +3,10 @@
 An online tool that uses the [MediaWiki API][mwapi] to solve the
 [Wiki Game][wikigame].
 
+## Try it out online!
+
+[**Live Demo on Github Pages**][demo]
+
 ### A brief description of the Wiki Game
 
 For the uninitiated, the Wiki Game is a simple game that can be played using only
@@ -12,12 +16,6 @@ game is to begin at the start article then, using only hyperlinks found in
 wikipedia articles, navigate from one page to another to find the end article.
 For example, if start article was *Hydrogen*  and the end article was *Penguin*
 your path may something look like: `Hydrogen > Algae > Marine biology > Penguin`
-
-## Try out the solver
-
-[**Live Demo on Github Pages**][demo]
-
-[**Download**][download]
 
 ## How it works
 
@@ -126,7 +124,6 @@ topics linked.
 
 [wikipedia]:https://wikipedia.org/
 [demo]:https://luctowers.github.io/wikimash
-[download]:https://github.com/luctowers/wikimash/archive/master.zip
 [mwapi]:https://www.mediawiki.org/wiki/API:Main_page
 [mwapietiquette]:https://www.mediawiki.org/wiki/API:Etiquette
 [mwapilinks]:https://www.mediawiki.org/wiki/API:Links
