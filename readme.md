@@ -35,7 +35,7 @@ in this case.
 
 ### The Wrong Approach
 
-One option is to do a simple [breadth-first search][bfs] from start article
+One option is to do a simple [breadth-first search][bfs] from the start article
 until you find the end article. Now, if a relatively short path between the
 start and end articles exists this wouldn't be a terrible option. But, in the
 likely scenario where there are more than a couple articles between start and
@@ -52,7 +52,7 @@ Meaning, instead of only having one search tree that tries to explore from start
 to end, we should use two search trees. The first will be a traditional forward
 search tree that begins at the start article and follows links to expand the
 tree. The second will be a backwards search tree which starts at the end article
-and follows [backlinks][backlink] (as oppose traditional forward links) to
+and follows [backlinks][backlink] (as opposed traditional forward links) to
 expand the tree. As we simultaneously explore both trees, if at any point we
 find an article shared between the two trees we instantly know that we have
 found a path from start and end. To complete the path we simply trace the shared
@@ -111,16 +111,16 @@ from the start to end. This is determined to be the case when one of the two
 search trees runs out of articles to explore. This is quite a rare occurrence. I
 have never observed it happening in the forward search tree. And the only time
 it has happened in the backward search tree is when the end article is extremely
-obscure an disconnected.
+obscure and disconnected.
 
 #### When Does the Algorithm Take a Long Time?
 
 The most common situation where the algorithm stalls is when it gets trapped in
 a group of articles that have a large number of connections to similar articles
-without with few connections to broader topics. This, much like the fail scenario
-is relatively rare. The only articles I've seen exhibit this are some 'List of
-[Insert Topic]' articles that have an absurd number of links but no broader
-topics linked. 
+without with few connections to broader topics. This, much like the fail
+scenario, is relatively rare. The only articles I've seen exhibit this are some
+'List of [Insert Topic]' articles that have an absurd number of links but no
+broader topics linked. 
 
 [wikipedia]:https://wikipedia.org/
 [demo]:https://luctowers.github.io/wikimash
