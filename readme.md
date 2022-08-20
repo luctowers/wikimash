@@ -47,7 +47,7 @@ search tree with no end insight.
 
 ### A Solution
 
-The secret to solving this problem is to perform a [bidirectional search][bds].
+A way to solve this problem is to perform a [bidirectional search][bds].
 Meaning, instead of only having one search tree that tries to explore from start
 to end, we should use two search trees. The first will be a traditional forward
 search tree that begins at the start article and follows links to expand the
